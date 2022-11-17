@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+    color: green;
+}
+
+#header {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 50px;
+}
+
+.start {
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+.start.finish{
+    background-color: red;
+}
+#memory_cards{
+    margin: auto;
+    width: 900px;
+    padding: 5px;
+    /* margin: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000;
+}
+.card{
+    width: 150px;
+    height: 200px;
+    position: relative;
+    margin: 10px;
+    background-color: blanchedalmond;
+    cursor: pointer;
+    transform: scale(1);    
+    box-shadow: 1px 1px 1px rgba(230, 178, 178, 0.3);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.card:active {
+    transform: scale(0.9); 
+    transition: transform .3s;
+}
+.card.flip {
+    transform: rotateY(180deg);
+}
+.front_card, .back_card{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+.front_card{
+    transform: rotateY(180deg);
+}
+.back_card{
+    backface-visibility: hidden;
+}
